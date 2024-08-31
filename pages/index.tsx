@@ -1,13 +1,14 @@
 import { GetServerSideProps, NextPage } from "next";
 
 import { useEffect, useState } from "react";
+import styles from "./index.module.css";
 
 type Props = {
   initialImageUrl: string;
 };
 const IndexPage: NextPage = ({ initialImageUrl }) => {
   const [imageUrl, setImageUrl] = useState(initialImageUrl);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   console.log(initialImageUrl);
   //初期画像はSSR で用意したので初期画面のuseEffectは不要
   //   useEffect(() => {
@@ -18,16 +19,20 @@ const IndexPage: NextPage = ({ initialImageUrl }) => {
   //   }, []);
 
   const handleClick = async () => {
-    setLoading(false);
+    setLoading(true);
     const newImage = await fetchImege();
     setImageUrl(newImage.url);
-    setLoading(true);
+    setLoading(false);
   };
 
   return (
-    <div>
-      <button onClick={handleClick}>更新</button>
-      <div>{loading ? <img src={imageUrl} /> : <p>ローディング中</p>}</div>
+    <div className={styles.page}>
+      <button onClick={handleClick} className={styles.button}>
+        更新
+      </button>
+      <div className={styles.frame}>
+        {loading || <img src={imageUrl} className={styles.img} />}
+      </div>
     </div>
   );
 };
