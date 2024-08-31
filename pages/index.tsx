@@ -1,12 +1,12 @@
 import { GetServerSideProps, NextPage } from "next";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./index.module.css";
 
 type Props = {
   initialImageUrl: string;
 };
-const IndexPage: NextPage = ({ initialImageUrl }) => {
+const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
   const [imageUrl, setImageUrl] = useState(initialImageUrl);
   const [loading, setLoading] = useState(false);
   console.log(initialImageUrl);
