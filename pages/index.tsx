@@ -13,7 +13,19 @@ const IndexPage: NextPage = () => {
     });
   }, []);
 
-  return <div>{loading || <img src={imageUrl} />}</div>;
+  const handleClick = async () => {
+    setLoading(true);
+    const newImage = await fetchImege();
+    setImageUrl(newImage.url);
+    setLoading(false);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>更新</button>
+      <div>{loading || <img src={imageUrl} />}</div>
+    </div>
+  );
 };
 
 export default IndexPage;
