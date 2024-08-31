@@ -1,34 +1,47 @@
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 
 import { useEffect, useState } from "react";
 
-const IndexPage: NextPage = () => {
-  const [imageUrl, setImageUrl] = useState("");
+type Props = {
+  initialImageUrl: string;
+};
+const IndexPage: NextPage = ({ initialImageUrl }) => {
+  const [imageUrl, setImageUrl] = useState(initialImageUrl);
   const [loading, setLoading] = useState(true);
+  console.log(initialImageUrl);
 
-  useEffect(() => {
-    fetchImege().then((newImage) => {
-      setImageUrl(newImage.url);
-      setLoading(false);
-    });
-  }, []);
+  //   useEffect(() => {
+  //     fetchImege().then((newImage) => {
+  //       setImageUrl(newImage.url);
+  //       setLoading(false);
+  //     });
+  //   }, []);
 
   const handleClick = async () => {
-    setLoading(true);
+    setLoading(false);
     const newImage = await fetchImege();
     setImageUrl(newImage.url);
-    setLoading(false);
+    setLoading(true);
   };
 
   return (
     <div>
       <button onClick={handleClick}>更新</button>
-      <div>{loading ? <p>ローディング中</p> : <img src={imageUrl} />}</div>
+      <div>{loading ? <img src={imageUrl} /> : <p>ローディング中</p>}</div>
     </div>
   );
 };
 
 export default IndexPage;
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const image = await fetchImege();
+  return {
+    props: {
+      initialImageUrl: image.url,
+    },
+  };
+};
 
 type Image = {
   url: string;
