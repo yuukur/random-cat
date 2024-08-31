@@ -9,7 +9,7 @@ const IndexPage: NextPage = ({ initialImageUrl }) => {
   const [imageUrl, setImageUrl] = useState(initialImageUrl);
   const [loading, setLoading] = useState(true);
   console.log(initialImageUrl);
-
+  //初期画像はSSR で用意したので初期画面のuseEffectは不要
   //   useEffect(() => {
   //     fetchImege().then((newImage) => {
   //       setImageUrl(newImage.url);
