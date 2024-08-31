@@ -23,7 +23,7 @@ const IndexPage: NextPage = () => {
   return (
     <div>
       <button onClick={handleClick}>更新</button>
-      <div>{loading || <img src={imageUrl} />}</div>
+      <div>{loading ? <p>ローディング中</p> : <img src={imageUrl} />}</div>
     </div>
   );
 };
