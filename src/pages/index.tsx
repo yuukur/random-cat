@@ -1,7 +1,8 @@
+import { Button } from "src/components/Button";
 import { GetServerSideProps, NextPage } from "next";
 
 import { useState } from "react";
-import styles from "./index.module.css";
+import styles from "src/pages/index.module.css";
 
 type Props = {
   initialImageUrl: string;
@@ -51,6 +52,7 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
         {loading || <img src={imageUrl} className={styles.img} />}
       </div>
       {randomValues == 2 ? <p>"Hey!SewageMan!!"</p> : <p></p>}
+      <Button />
     </div>
   );
 };
