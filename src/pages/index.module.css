@@ -73,3 +73,10 @@
     background-position: 0 90px;
   }
 }
+.massege {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Sacramento", cursive, "Noto Sans JP", sans-serif;
+}
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
