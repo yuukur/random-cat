@@ -49,12 +49,14 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
   };
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} w-auto`}>
       <button onClick={handleClick} className={styles.button}>
         更新
       </button>
-      <div className={styles.frame}>
-        {loading || <img src={imageUrl} className={styles.img} />}
+      <div className={`${styles.frame} w-auto`}>
+        {loading || (
+          <img src={imageUrl} className={`${styles.img} w-full h-full`} />
+        )}
       </div>
       {randomValues == 2 ? (
         <p className={styles.massege}>Hey!SewageMan</p>
