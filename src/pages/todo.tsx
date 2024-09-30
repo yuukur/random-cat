@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 function App() {
   type Todo = {
     inputValue: string;
@@ -9,6 +9,15 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [version, setVersion] = useState<number>(0);
+  useEffect(() => {
+    const localStorageTodoList = localStorage.getItem("todos");
+    if (localStorageTodoList) {
+      setTodos(JSON.parse(localStorageTodoList));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     // console.log(e.target.value);
