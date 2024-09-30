@@ -41,7 +41,7 @@ const Header = () => {
               ></span>
             </button>
             {isOpen && (
-              <div className="absolute top-10 right-0 w-40 bg-white shadow-lg border">
+              <div className="absolute top-10 right-0 w-40 bg-white shadow-lg border z-10 ">
                 <ul className="flex flex-col space-y-2 p-2">
                   <li>
                     <Link
@@ -63,7 +63,7 @@ const Header = () => {
                   </li>
                   <li>
                     <a href="#" className="block px-2 py-1 hover:bg-gray-100">
-                      Seacret
+                      SECRET
                     </a>
                   </li>
                 </ul>
