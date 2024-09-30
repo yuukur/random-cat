@@ -62,7 +62,10 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-2 py-1 hover:bg-gray-100">
+                    <a
+                      href="/secret"
+                      className="block px-2 py-1 hover:bg-gray-100"
+                    >
                       SECRET
                     </a>
                   </li>
