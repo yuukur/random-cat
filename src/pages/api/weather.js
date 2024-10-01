@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   const BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
 
   const response = await fetch(
-    `${BASE_URL}?q=tokyo&appid=${API_KEY}&units=metric`
+    `${BASE_URL}?q=${city}&appid=${API_KEY}&units=metric`
   );
 
   const data = await response.json();
