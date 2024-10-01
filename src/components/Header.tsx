@@ -15,8 +15,11 @@ const Header = () => {
             <Link href="/" passHref className="pr-10">
               HOME
             </Link>
-            <Link href="/todo" passHref>
+            <Link href="/todo" passHref className="pr-8">
               TODO
+            </Link>
+            <Link href="/weather" passHref>
+              WEATHER
             </Link>
             <button
               onClick={toggleMenu}
@@ -62,12 +65,22 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
+                      href="/weather"
+                      passHref
+                      className="block px-2 py-1 hover:bg-gray-100"
+                    >
+                      WEATHER
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/secret"
+                      passHref
                       className="block px-2 py-1 hover:bg-gray-100"
                     >
                       SECRET
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
