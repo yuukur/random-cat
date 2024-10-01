@@ -7,9 +7,14 @@ function weather() {
 
   const getWeather = async () => {
     try {
+      if (!city) {
+        throw new Error("City name is required");
+      }
+
       const response = await fetch(`/api/weather?city=${city}`);
       if (!response.ok) {
-        throw new Error("error");
+        console.log("fetch miss error");
+        throw new Error("error fetching");
       }
 
       const weatherData = await response.json();
