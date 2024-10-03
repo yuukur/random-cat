@@ -41,7 +41,7 @@ function weather() {
               type="text"
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              className="rounded-xl pl-3 leading-9 text-gray-600"
+              className="text-gray-600 w-1/2 leading-8 rounded-xl pl-3 my-break-point:rounded-xl my-break-point:pl-3 my-break-point:leading-9 my-break-point:text-gray-600"
               placeholder="city name"
             />
             <button

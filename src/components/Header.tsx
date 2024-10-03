@@ -12,10 +12,10 @@ const Header = () => {
       <header className="w-full h-12 bg-white-300 border-4 border-stone">
         <div className="relative">
           <nav className=" flex mx-4 leading-10">
-            <Link href="/" passHref className="pr-10">
+            <Link href="/" passHref className="pr-3 my-break-point:pr-10">
               HOME
             </Link>
-            <Link href="/todo" passHref className="pr-8">
+            <Link href="/todo" passHref className="pr-3 my-break-point:pr-8">
               TODO
             </Link>
             <Link href="/weather" passHref>
