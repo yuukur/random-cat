@@ -18,9 +18,9 @@ const Header = () => {
             <Link href="/todo" passHref className="pr-8">
               TODO
             </Link>
-            {/* <Link href="/weather" passHref>
+            <Link href="/weather" passHref>
               WEATHER
-            </Link> */}
+            </Link>
             <button
               onClick={toggleMenu}
               className="ml-auto px-1 py-1 flex flex-col items-center justify-center space-y-1"
@@ -64,7 +64,7 @@ const Header = () => {
                       TODO
                     </Link>
                   </li>
-                  {/* <li>
+                  <li>
                     <Link
                       href="/weather"
                       passHref
@@ -72,7 +72,7 @@ const Header = () => {
                     >
                       WEATHER
                     </Link>
-                  </li> */}
+                  </li>
                   <li>
                     <Link
                       href="/secret"
