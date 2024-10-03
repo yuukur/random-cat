@@ -16,7 +16,11 @@ module.exports = {
 
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "my-break-point": "350px",
+      },
+    },
   },
   plugins: [],
 };
