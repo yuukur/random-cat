@@ -18,7 +18,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        "my-break-point": "350px",
+        "my-break-point": "360px",
       },
     },
   },

@@ -71,7 +71,7 @@ function App() {
         <h1 className="text-5xl text-blue-300 font-bold underline">
           TODOリスト
         </h1>
-        <div className="mt-5 m-auto w-1/2 text-left">
+        <div className="mt-5 m-auto  text-left">
           <form
             onSubmit={(e) => {
               handleSubmit(e);
@@ -93,7 +93,7 @@ function App() {
               className="ml-3 border-2 bg-gray-100 text-gray-600"
             />
           </form>
-          <div className="mt-5">
+          <div className="mt-5 w-auto">
             <ul className="flex flex-col">
               {todos.map((todo) => (
                 <li
@@ -105,19 +105,19 @@ function App() {
                     value={todo.inputValue}
                     className={
                       todo.checked
-                        ? "w-3/5 border-b-4 line-through"
-                        : "w-3/5 border-b-4 "
+                        ? "my-break-point:w-3/5 my-break-point:border-b-4 my-break-point:line-through border-b-4 line-through overflow-hidden text-ellipsis break-words "
+                        : "my-break-point:w-3/5 my-break-point:border-b-4 overflow-hidden text-ellipsis break-words border-b-4 "
                     }
                     onChange={(e) => handleEdit(todo.id, e.target.value)}
                     disabled={todo.checked}
                   />
                   <input
                     type="checkbox"
-                    className="scale-150"
+                    className="my-break-point:scale-150 m-1"
                     onChange={(e) => handleChecked(todo.id, todo.checked)}
                   />
                   <button
-                    className="border-2 bg-gray-100 text-gray-600"
+                    className="text-sm border-2 bg-gray-100 text-gray-600 m-3 p-1 my-break-point:border-2 my-break-point:bg-gray-100 my-break-point:text-gray-600"
                     onClick={(e) => handleDelete(todo.id)}
                   >
                     消
